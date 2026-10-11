@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Студия керамики «Глина»</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="logo" href="#top">Глина</a>
+
+    <!-- Иконка «гамбургер»: на мобильной ширине показывается вместо меню -->
+    <button class="burger" type="button" aria-label="Открыть меню">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav" aria-label="Основное меню">
+      <a href="#services">Занятия</a>
+      <a href="#about">О студии</a>
+      <a href="#contact">Записаться</a>
+    </nav>
+  </header>
+
+  <main class="page" id="top">
+
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Лепим из глины своими руками</h1>
+        <p>
+          Мастер-классы по керамике для новичков и тех, кто давно хотел попробовать.
+          Все материалы и обжиг входят в стоимость.
+        </p>
+        <a class="button" href="#contact">Записаться на занятие</a>
+      </div>
+      <img class="hero-img" src="https://picsum.photos/id/1025/800/600" alt="Керамические изделия на столе" width="800" height="600">
+    </section>
+
+    <section class="services" id="services">
+      <h2>Наши занятия</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Первый раз</h3>
+          <p>Знакомство с глиной: слепим кружку или тарелку за один вечер.</p>
+          <span class="price">2 500 ₽</span>
+        </article>
+        <article class="card">
+          <h3>Гончарный круг</h3>
+          <p>Учимся центровать глину и вытягивать форму на круге.</p>
+          <span class="price">3 500 ₽</span>
+        </article>
+        <article class="card">
+          <h3>Роспись</h3>
+          <p>Расписываем готовые изделия глазурью и узорами.</p>
+          <span class="price">2 000 ₽</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <h2>О студии</h2>
+      <p>
+        Мы работаем с 2019 года. В группе не больше восьми человек, поэтому
+        мастер уделяет внимание каждому. Готовые изделия забираете через две недели.
+      </p>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>Запись на занятие</h2>
+      <form class="form">
+        <label class="field">
+          <span>Имя</span>
+          <input type="text" name="name" placeholder="Как вас зовут">
+        </label>
+        <label class="field">
+          <span>Email</span>
+          <input type="email" name="email" placeholder="you@example.com">
+        </label>
+        <label class="field">
+          <span>Сообщение</span>
+          <textarea name="message" rows="4" placeholder="Какое занятие интересует?"></textarea>
+        </label>
+        <button class="button" type="submit">Отправить</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Студия керамики «Глина»</p>
+    <p>ул. Гончарная, 12 · +7 900 123-45-67</p>
+  </footer>
+
+</body>
+</html>
