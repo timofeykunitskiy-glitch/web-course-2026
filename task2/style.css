@@ -1,0 +1,325 @@
+/* =========================================================
+   Базовые стили = МОБИЛЬНАЯ версия (до 767px)
+   Дальше через min-width добавляем планшет и десктоп
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #faf6f1;
+  --text: #2b2420;
+  --accent: #b5532f;
+  --accent-dark: #8c3d20;
+  --card: #ffffff;
+  --muted: #6d625b;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---------- Кнопка (flex: компонент) ---------- */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;             /* touch-friendly: не меньше 44px */
+  padding: 0 24px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s;   /* плавный переход */
+}
+
+.button:hover {
+  background: var(--accent-dark);
+}
+
+.button:focus-visible {
+  outline: 3px solid var(--text);
+  outline-offset: 2px;
+}
+
+/* ---------- Шапка (flex: логотип + меню/бургер) ---------- */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background: var(--card);
+  border-bottom: 1px solid #e6ddd3;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* Меню на мобильной ширине скрыто, вместо него — бургер */
+.nav {
+  display: none;
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* Три полоски нарисованы тремя <span> */
+.burger span {
+  width: 26px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--text);
+}
+
+.burger:hover span {
+  background: var(--accent);
+}
+
+/* ---------- Основная сетка страницы (GRID) ---------- */
+.page {
+  display: grid;
+  grid-template-columns: 1fr;     /* мобильный: одна колонка */
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+h1 {
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+/* ---------- Герой-секция ---------- */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.hero-img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* ---------- Карточки услуг ---------- */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;     /* мобильный: 1 карточка в ряд */
+  gap: 16px;
+}
+
+.card {
+  display: flex;                  /* раскладка внутри карточки — flex */
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px;
+  background: var(--card);
+  border-radius: 12px;
+  border: 1px solid #e6ddd3;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.price {
+  margin-top: auto;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+/* ---------- Форма ---------- */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 500px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field input,
+.field textarea {
+  min-height: 48px;
+  padding: 10px 12px;
+  border: 1px solid #c9bdb1;
+  border-radius: 8px;
+  background: #fff;
+  font-family: inherit;
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.field input:hover,
+.field textarea:hover {
+  border-color: var(--accent);
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(181, 83, 47, 0.25);
+}
+
+/* ---------- Подвал ---------- */
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 24px 16px;
+  background: var(--text);
+  color: #f1e9e0;
+  text-align: center;
+}
+
+
+/* =========================================================
+   ПЛАНШЕТ: от 768px
+   ========================================================= */
+@media (min-width: 768px) {
+
+  /* Бургер прячем, показываем обычное меню */
+  .burger {
+    display: none;
+  }
+
+  .nav {
+    display: flex;
+    gap: 8px;
+  }
+
+  .nav a {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 0 12px;
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .nav a:hover {
+    color: var(--accent);
+  }
+
+  .site-header {
+    padding: 8px 32px;
+  }
+
+  .page {
+    padding: 40px 32px;
+    gap: 48px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  /* Карточки: 2 в ряд */
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .site-footer {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 24px 32px;
+  }
+}
+
+
+/* =========================================================
+   ДЕСКТОП: от 1200px
+   ========================================================= */
+@media (min-width: 1200px) {
+
+  .site-header {
+    padding: 8px 48px;
+  }
+
+  /* Герой: текст слева, картинка справа */
+  .hero {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 48px;
+  }
+
+  h1 {
+    font-size: 52px;
+  }
+
+  /* Карточки: 3 в ряд */
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* «О студии» и «Запись» рядом, в две колонки */
+  .page {
+    grid-template-columns: 1fr 1fr;
+    gap: 64px 48px;
+    padding: 56px 48px;
+  }
+
+  .hero,
+  .services {
+    grid-column: 1 / -1;        /* на всю ширину сетки */
+  }
+
+  .site-footer {
+    padding: 24px 48px;
+  }
+}
