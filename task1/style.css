@@ -1,0 +1,175 @@
+/* Глобально: border-box */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background: #f4f6f8;
+
+  /* Раскладка страницы: колонка из блоков */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1, h2, p {
+  margin: 0;
+}
+
+/* ---------- Шапка ---------- */
+.site-header {
+  display: flex;
+  flex-direction: row;       /* аватар слева, текст справа */
+  align-items: center;       /* выравнивание по вертикали */
+  justify-content: center;   /* по центру по горизонтали */
+  flex-wrap: wrap;           /* перенос, если не помещается */
+  gap: 24px;
+  padding: 32px 24px;
+  background: #1f3a5f;
+  color: #fff;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.role {
+  font-size: 18px;
+  color: #bcd3f2;
+}
+
+.slogan {
+  font-style: italic;
+}
+
+/* ---------- Навигация ---------- */
+.main-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  padding: 12px 24px;
+  background: #fff;
+  border-bottom: 1px solid #dde3ea;
+}
+
+.main-nav a {
+  color: #1f3a5f;
+  text-decoration: none;
+  padding: 4px 8px;
+}
+
+.main-nav a:hover {
+  color: #d9480f;
+  text-decoration: underline;
+}
+
+/* ---------- Основное содержимое ---------- */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px;
+  flex: 1;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+h2 {
+  font-size: 22px;
+  color: #1f3a5f;
+}
+
+/* ---------- Образование ---------- */
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.education-list li {
+  padding-left: 4px;
+}
+
+.education-list strong,
+.education-list span {
+  display: block;
+}
+
+.education-list span {
+  color: #666;
+  font-size: 14px;
+}
+
+/* ---------- Навыки (пилюли) ---------- */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill {
+  padding: 6px 16px;
+  background: #dbe8fb;
+  color: #1f3a5f;
+  border-radius: 999px;
+  font-size: 14px;
+}
+
+/* ---------- Контакты ---------- */
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 24px;
+  background: #1f3a5f;
+  color: #fff;
+}
+
+.site-footer h2 {
+  color: #fff;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+}
+
+.contact-links a {
+  color: #bcd3f2;
+  text-decoration: none;
+}
+
+.contact-links a:hover {
+  color: #ffd43b;
+  text-decoration: underline;
+}
